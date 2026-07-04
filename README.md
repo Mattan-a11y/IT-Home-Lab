@@ -24,11 +24,11 @@ When I tried to promote the server, I got a red error: the Administrator passwor
 **How I fixed it:**
 Opened PowerShell as Administrator and ran:
 `net user Administrator Password123!`
-After that, the installation worked perfectly.
 After that, the installation went through.
 
 ### Proof
-![Server Manager](01_Active_Directory/01-dashboard.png)
-![Static IP](01_Active_Directory/01-static-ip.png)
+![Server Manager dashboard](01_Active_Directory/01-dashboard.png)
+![Static IP configured](01_Active_Directory/01.1-static-ip.png)
 ![The red error](01_Active_Directory/11-prerequisites-check-error.png)
-![Active Directory Users](01_Active_Directory/13-aduc-done.png)
+![Fixed via PowerShell](01_Active_Directory/11.1-prerequisites-check-error.png)
+![Active Directory Users and Computers - domain live](01_Active_Directory/13-aduc-done.png)
