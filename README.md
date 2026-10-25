@@ -1,66 +1,41 @@
-# IT Home Lab — Windows Server & IT Support
+# IT Home Lab — Windows Server och Active Directory
 
-**Praktiskt hemlabb för junior IT-support / helpdesk / onsite IT-tekniker.**
+Det här är **mitt eget IT-labb**. Jag har arbetat med Windows Server, Active Directory och virtuella klienter i VMware. Här visar jag vad jag faktiskt har byggt, hur jag hanterat problem och vad jag lärde mig. Jag använder projektet som en del av min portfölj när jag söker jobb inom IT-support.
 
-Jag bygger och dokumenterar ett virtualiserat företagsnät i VMware med Windows Server 2025, Active Directory och Windows-klienter. Syftet är att visa **vad jag faktiskt har gjort**, **hur jag felsöker** och **hur jag verifierar lösningar**.
+## Det jag har gjort
 
-> **Projektstatus (25 oktober 2026):** Lab 01 dokumenterar Windows Server 2025 och en Active Directory-domänkontrollant med skärmbilder. Jag har dessutom **uppgett att jag tidigare installerat Windows 11 i VMware och arbetat med DNS, DHCP och klienttestning under Active Directory-/certifikatövningar**; dessa tidigare moment saknar ännu bevis i detta repository. Lab 02:s sex specifika simulerade ärenden är inte verifierade som avslutade.
-
-## Projektöversikt
-
-| Del | Innehåll | Status |
+| Teknik | Min erfarenhet | Dokumentation |
 |---|---|---|
-| [01 — Active Directory](01_Active_Directory/) | Windows Server 2025, VMware, statisk IPv4 (`10.0.0.1`), AD DS-domän `lab.local` | Dokumenterat med skärmbilder |
-| [02 — IT-support / First Line](02_IT_Support/README.md) | Ny isolerad klientmiljö och sex simulerade supportfall | Planerad; tidigare liknande övningar har uppgetts |
-| [Supportärenden](02_IT_Support/TICKETS.md) | Sex scenarier från inloggning till onboarding | Scenarier klara; tester återstår |
-| [Progress / bevis](02_IT_Support/PROGRESS.md) | Status, testresultat, bilder och återstående arbete | Löpande |
-| [Arbetsgivarvy](02_IT_Support/FOR_EMPLOYERS.md) | Verifierbara CV- och intervjuformuleringar | Klart utifrån befintlig dokumentation |
+| Windows Server 2025 | Jag installerade servern i VMware. | [Min AD-labbrapport](01_Active_Directory/README.md) med skärmbilder |
+| Active Directory | Jag installerade AD DS och konfigurerade en domänkontrollant för `lab.local`. | [Min AD-labbrapport](01_Active_Directory/README.md) |
+| Nätverk | Jag konfigurerade en statisk IP-adress (`10.0.0.1`) på servern. | [Skärmbilder och labbrapport](01_Active_Directory/README.md) |
+| Felsökning | Jag löste ett fel i förutsättningskontrollen när servern skulle bli domänkontrollant. | [Min felsökning](01_Active_Directory/README.md#ett-fel-jag-felsökte) |
+| Windows 11 i VMware | Jag installerade tidigare en Windows 11-klient under mina Active Directory-övningar. | [Min sammanfattning](02_IT_Support/README.md); bilder från det momentet saknas här |
+| DNS, DHCP och klienttester | Jag arbetade tidigare med dessa moment i samband med mina Active Directory-övningar. | [Min sammanfattning](02_IT_Support/README.md); detaljerade testloggar saknas här |
 
-## Så är labbet tänkt att fungera
+Jag skiljer på det jag har **dokumenterat med skärmbilder** och de praktiska moment jag har **genomfört tidigare men ännu inte dokumenterat i detta repository**. Jag påstår inte att jag har arbetat med riktiga kundärenden bara för att jag gjort övningar.
 
-**Planerad isolerad VMware-miljö:**
+## Ett konkret problem jag löste
 
-- **Server:** Windows Server 2025, Active Directory Domain Services, DNS och senare DHCP.
-- **Domän:** `lab.local` (befintlig).
-- **IP-adresser:** `10.0.0.1` på servern; planerat isolerat `10.0.0.0/24`-nät, klient via DHCP när konfigurerat.
-- **Klient:** Windows 11 Enterprise Evaluation, `LAB-PC01`.
-- **Fiktiva användare:** Emma (Support), Noah (Ekonomi) och Sara (HR).
-- **Träningsmoment:** kontoåtkomst, klientanslutning, nätverksfelsökning, filrättigheter, GPO och nyanställda.
+När jag installerade Active Directory Domain Services och skulle konfigurera servern som domänkontrollant stoppades jag av ett fel under förutsättningskontrollen.
 
-Ingen företagsdata eller riktiga kundärenden ingår.
+Jag granskade felmeddelandet och upptäckte att administratörskontot saknade lösenord. Jag rättade kontots inställning och genomförde sedan konfigurationen. Efteråt kunde jag öppna **Active Directory Users and Computers** och se domänen `lab.local`.
 
-## Lab 01 — dokumenterad grund
+Jag sparade skärmbilder från både felet och den färdiga installationen. Det är ett exempel jag kan visa och förklara under en IT-intervju.
 
-### Det jag gjorde
-1. Installerade Windows Server 2025 i VMware.
-2. Konfigurerade en statisk IPv4-adress (`10.0.0.1`).
-3. Installerade rollen Active Directory Domain Services.
-4. Promoterade servern till domänkontrollant för `lab.local`.
-5. Dokumenterade ett förutsättningsfel under installationen och hur jag rättade det.
+![Min Windows Server-miljö](01_Active_Directory/01-dashboard.png)
+![Problemet under AD-konfigurationen](01_Active_Directory/11-prerequisites-check-error.png)
+![Active Directory efter installationen](01_Active_Directory/13-aduc-done.png)
 
-### Ett verkligt felsökningsmoment
+## Mina labbrapporter
 
-Under förutsättningskontrollen för domänkontrollanten upptäcktes att det lokala administratörskontot saknade lösenord. Jag satte ett lösenord på kontot och slutförde konfigurationen.
+- [**Active Directory – installation, konfiguration och felsökning**](01_Active_Directory/README.md)
+- [**Windows 11, DNS, DHCP och klienttester – tidigare praktiska övningar**](02_IT_Support/README.md)
+- [**Så beskriver jag min erfarenhet under en intervju**](02_IT_Support/INTERVIEW_STORIES.md)
+- [**Projektbeskrivning för CV och LinkedIn**](02_IT_Support/FOR_EMPLOYERS.md)
 
-**Säkerhetsnotering:** Ett äldre README-exempel visade ett konkret labblösenord. Det har tagits bort från den aktuella texten. Lösenord som funnits i Git-historiken eller skärmbilder ska betraktas som exponerade och bytas innan systemet används igen.
+## Om erfarenheten
 
-### Dokumenterade skärmbilder
-![Server Manager](01_Active_Directory/01-dashboard.png)
-![Statisk IP-konfiguration](01_Active_Directory/01.1-static-ip.png)
-![Förutsättningsfel](01_Active_Directory/11-prerequisites-check-error.png)
-![Felsökning](01_Active_Directory/11.1-prerequisites-check-error.png)
-![Active Directory Users and Computers](01_Active_Directory/13-aduc-done.png)
+Det här är praktisk **projekt- och labberfarenhet**, inte en anställning som IT-supporttekniker. Jag beskriver bara genomförda moment och skiljer mellan egna dokumenterade resultat och arbete jag behöver komplettera med mer bevis.
 
-## Lab 02 — praktiskt supportarbete
-
-**[Starta här: installera och bygg labbet](02_IT_Support/SETUP.md)**
-
-Jag kan också återge [tidigare AD-, DNS- och DHCP-övningar i en intervjubank](02_IT_Support/INTERVIEW_STORIES.md). De sex nya, specifika övningarna hålls separat. Därefter arbetar jag vid behov med [sex simulerade supportärenden](02_IT_Support/TICKETS.md), dokumenterar varje test med [ärendemallen](02_IT_Support/TICKET_TEMPLATE.md) och uppdaterar den [verifierade statusloggen](02_IT_Support/PROGRESS.md).
-
-> **För rekryterare:** Detta är självständiga teknikprojekt, inte tidigare anställningar eller påhittade kunduppdrag. Endast verifierade labbresultat markeras som slutförda.
-
-## Kompetenser som projektet övar
-
-Windows Server · VMware · Active Directory · DNS · DHCP · Windows 11 · TCP/IP · felsökning · behörigheter · Group Policy · teknisk dokumentation.
-
-**Kontakt och övriga projekt:** [GitHub-profil](https://github.com/Mattan-a11y).
+**Säkerhet:** Ett lösenordsexempel från en äldre version av projektet har tagits bort från den aktuella dokumentationen. Om lösenordet fortfarande används i labbet måste det bytas eftersom äldre Git-versioner kan innehålla det.
