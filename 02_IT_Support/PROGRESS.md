@@ -1,39 +1,31 @@
-# Progress — verifierad status
+# Progress — vad som är gjort, uppgivet och dokumenterat
 
-**Senast uppdaterad:** 2026-10-25  
-Detta dokument är en **ärlig statuslogg**. Att en instruktion finns i GitHub betyder inte att övningen är genomförd.
+**Uppdaterat:** 2026-10-25.
 
-| Del | Status | Underlag |
+Det finns tre olika nivåer av erfarenhet i detta projekt. **Ej dokumenterat här betyder inte att jag aldrig har gjort det.** Projektet skiljer mellan bilder som finns på GitHub, tidigare praktik som jag uppgett och nya scenarier som skapats för just detta repository.
+
+| Område | Status | Källa / nästa bevis |
 |---|---|---|
-| Windows Server 2025 VM | Dokumenterad som gjord | Se befintlig Lab 01 README |
-| Statisk IP 10.0.0.1 | Dokumenterad som gjord | Se befintlig Lab 01 README och bilder |
-| AD DS / domän lab.local | Dokumenterad som gjord | Se befintlig Lab 01 README och bilder |
-| Separat isolerat VMware-nät | Inte verifierat | Lägg till datum och bild |
-| Windows 11-klient | Inte verifierat | Lägg till datum och bild |
-| DNS-funktion från klient | Inte verifierat | Lägg till datum och bild |
-| DHCP-omfång och lease | Inte verifierat | Lägg till datum och bild |
-| Domänanslutning LAB-PC01 | Inte verifierat | Lägg till datum och bild |
-| Testanvändare / AD-grupper | Inte verifierat | Lägg till datum och bild |
-| NTFS- och delningsbehörigheter | Inte verifierat | Lägg till datum och bild |
-| GPO på testanvändare | Inte verifierat | Lägg till datum och bild |
-| LAB-001 inloggning | Inte genomfört | Skapa ärendedokument |
-| LAB-002 DHCP | Inte genomfört | Skapa ärendedokument |
-| LAB-003 delad mapp | Inte genomfört | Skapa ärendedokument |
-| LAB-004 GPO | Inte genomfört | Skapa ärendedokument |
-| LAB-005 DNS | Inte genomfört | Skapa ärendedokument |
-| LAB-006 onboarding | Inte genomfört | Skapa ärendedokument |
+| Windows Server 2025 i VMware | **Dokumenterat i Lab 01** | Befintlig README och skärmbilder |
+| Statisk IP 10.0.0.1 | **Dokumenterat i Lab 01** | Befintlig README och skärmbilder |
+| AD DS / domän lab.local | **Dokumenterat i Lab 01** | Befintlig README och skärmbilder |
+| Windows 11 installerat i VMware | **Tidigare genomfört – enligt egen uppgift** | Gjordes i anslutning till tidigare Active Directory-/certifikatövningar; underlag saknas i detta repository |
+| DNS, DHCP och klienttestning | **Tidigare genomfört – enligt egen uppgift** | Gjordes i tidigare AD-/certifikatövningar; exakt miljö och testresultat ska kompletteras |
+| Supportrelaterad felsökning under tidigare övningar | **Uppgiven tidigare erfarenhet** | Beskriv konkreta fel och åtgärder innan de presenteras som fallstudier |
+| Separat isolerat VMware-nät i *den nya Lab 02-miljön* | **Inte verifierat här** | Testa och lägg till nätverksöversikt |
+| Windows 11-klienten LAB-PC01 i *den nya Lab 02-miljön* | **Inte verifierat här** | Tidigare klienter är inte automatiskt LAB-PC01 |
+| DNS/DHCP från *den nya LAB-PC01* | **Inte verifierat här** | Lägg till bevis för konfiguration och test |
+| Testanvändare / AD-grupper för Lab 02 | **Inte verifierat här** | Lägg till testresultat |
+| NTFS / delningsbehörigheter för Lab 02 | **Inte verifierat här** | Lägg till testresultat |
+| GPO för Lab 02 | **Inte verifierat här** | Lägg till testresultat |
+| LAB-001 till LAB-006, de sex **specifika nya** GitHub-ärendena | **Inte verifierade som avslutade** | Använd ärendemallen för var och en när/om de görs |
 
-## Uppdateringsregel
-- Ändra endast status till **Klart** efter att du testat och verifierat momentet.
-- Lägg till datum, anteckning och en anonymiserad skärmbild i en separat ärendefil.
-- Skriv vad som inte fungerade. Det visar felsökningsförmåga.
-- Spara bilder i en underkatalog, t.ex. `evidence/LAB-001/`, när de finns på riktigt.
-- Om ett labblösenord någonsin syns i materialet: byt det. Lösenord hör inte hemma i GitHub.
+## Vad jag redan kan prata om på intervju
+- Hur jag satte upp Active Directory i VMware och löste det dokumenterade förutsättningsfelet vid DC-konfigurationen.
+- Att jag tidigare installerat en Windows 11-klient och arbetat med DNS, DHCP och klienttestning i anslutning till Active Directory-övningar (**egen uppgift**).
+- Vilka konkreta steg jag använde i dessa tidigare tester, efter att jag återgett dem från mina anteckningar eller minnet.
 
-## Checklista för första passet
-- [ ] Verifiera befintlig server-VM och AD-domän.
-- [ ] Kontrollera att testnätet inte når hemmets LAN via bridged.
-- [ ] Ta återställningspunkt.
-- [ ] Skapa och starta klient-VM.
-- [ ] Kontrollera Windows-klientens DNS till servern.
-- [ ] Dokumentera en skärmbild och ett felsökningsfynd.
+## Rekommenderat nästa steg
+Det viktigaste är **inte att upprepa allt från början**. Rekonstruera 2–3 verkliga problemlösningar från de tidigare övningarna: symptom → felsökning → grundorsak → åtgärd → verifiering. Använd [intervjuunderlaget](INTERVIEW_STORIES.md). Komplettera gärna med skärmbilder eller kursmaterial. Håll de nya ärendena öppna tills de faktiskt testats.
+
+**Säkerhet:** Lägg aldrig upp riktiga lösenord, tokens eller användaruppgifter.
