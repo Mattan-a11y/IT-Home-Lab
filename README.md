@@ -11,7 +11,7 @@ Jag bygger och dokumenterar ett virtualiserat företagsnät i VMware med Windows
 | Del | Innehåll | Status |
 |---|---|---|
 | [01 — Active Directory](01_Active_Directory/) | Windows Server 2025, VMware, statisk IPv4 (`10.0.0.1`), AD DS-domän `lab.local` | Dokumenterat med skärmbilder |
-| [02 — IT-support / First Line](02_IT_Support/README.md) | Windows 11-klient, isolerat labbnät, DNS/DHCP, gruppbehörigheter, GPO | Planerat, ej verifierat |
+| [02 — IT-support / First Line](02_IT_Support/README.md) | Windows 11-klient, isolerat labbnät, DNS/DHCP, gruppbehörigheter, GPO |
 | [Supportärenden](02_IT_Support/TICKETS.md) | Sex scenarier från inloggning till onboarding | Scenarier klara; tester återstår |
 | [Progress / bevis](02_IT_Support/PROGRESS.md) | Status, testresultat, bilder och återstående arbete | Löpande |
 | [Arbetsgivarvy](02_IT_Support/FOR_EMPLOYERS.md) | Verifierbara CV- och intervjuformuleringar | Klart utifrån befintlig dokumentation |
