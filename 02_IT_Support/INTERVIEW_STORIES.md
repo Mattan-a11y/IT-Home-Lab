@@ -1,57 +1,28 @@
-# Intervjubank — verkliga erfarenheter från IT-labb
+# Så berättar jag om min praktiska IT-erfarenhet
 
-Målet är att kunna förklara **redan genomförda moment** för junior IT-support. Inga påhittade kunduppdrag. Kontrollera datum, symptom, miljö och åtgärder mot egna anteckningar.
+Det här är mina egna exempel från labbarbetet. Jag skiljer på ett **dokumenterat problem jag faktiskt löste** och tekniska moment jag tidigare utförde men inte har detaljerade anteckningar om här.
 
-## Exempel 1 — Active Directory: förutsättningskontroll vid domänkontrollant
-**Bevis:** Lab 01 README och tillhörande skärmbilder.
+## Min presentation
 
-**Situationen:** Jag installerade Windows Server 2025 i VMware och byggde domänen `lab.local`. Vid förutsättningskontrollen inför DC-konfiguration uppstod ett fel.
+> Jag har praktisk erfarenhet av Windows Server, Active Directory och VMware från mina egna labbar och tidigare teknikövningar. Jag har bland annat byggt en domänkontrollant med Windows Server 2025, arbetat med Windows 11 som virtuell klient och övat DNS, DHCP och klienttester. Jag har dokumenterat mitt Active Directory-labb på GitHub, inklusive ett problem jag felsökte under installationen. Nu söker jag en junior IT-supportroll där jag kan använda min tekniska grund och utvecklas i arbetet med användare och felsökning.
 
-**Vad jag gjorde:** Jag läste felmeddelandet, identifierade att administratörskontot saknade lösenord, rättade förutsättningen och slutförde installationen.
+## Ett problem jag faktiskt löste: Active Directory
 
-**Resultat:** Active Directory Users and Computers visade den skapade domänen.
+> När jag byggde mitt Active Directory-labb installerade jag Windows Server 2025 i VMware och försökte konfigurera en domänkontrollant för `lab.local`. Installationen stoppades under förutsättningskontrollen. Jag läste felmeddelandet och såg att administratörskontot saknade lösenord. Jag åtgärdade det och kunde sedan slutföra konfigurationen. Jag kontrollerade resultatet i Active Directory Users and Computers och sparade skärmbilder som visar både felet och den färdiga domänen.
 
-**Vad det visar:** Metodisk felsökning, förmåga att läsa felmeddelanden och dokumentera arbetet.
+**Underlag:** [Min AD-labbrapport](../01_Active_Directory/README.md).
 
-**Kort intervjusvar:**
-> I mitt eget labb installerade jag Windows Server 2025 och konfigurerade Active Directory. Under förutsättningskontrollen inför domänkontrollanten uppstod ett fel eftersom administratörskontot saknade lösenord. Jag följde felmeddelandet, korrigerade inställningen och kunde slutföra installationen. Efteråt kontrollerade jag domänen i Active Directory och dokumenterade processen på GitHub.
+## Min erfarenhet av Windows 11, DNS och DHCP
 
-## Exempel 2 — DNS (tidigare AD-/certifikatövning, enligt egen uppgift)
-**Vad du uppgett:** Du har arbetat med DNS och klienttestning i samband med tidigare Active Directory-studier.
+> I samband med mina tidigare Active Directory-övningar installerade jag Windows 11 i VMware och arbetade även med DNS, DHCP och klienttestning. Jag fick därigenom praktisk erfarenhet av hur en Windows-klient och grundläggande nätverkstjänster fungerar i en virtuell miljö.
 
-Fyll i **innan** du använder det som en specifik löst incident:
-- Vilken klient/server använde du?
-- Vad var felet? [skriv verkligt fel, inte påhittat]
-- Hur undersökte du om klienten använde rätt DNS-server?
-- Vad visade dina tester?
-- Vad ändrade du och vad fungerade efteråt?
-- Vilket kursmaterial eller vilken skärmbild kan styrka det?
+**Underlag:** Detta bygger på min tidigare genomförda övning. Jag har ännu inte lagt till tillräcklig dokumentation här för att beskriva ett särskilt felsökningsfall och dess exakta resultat. Jag ska därför inte presentera det som ett bevisat löst ärende.
 
-**Tekniskt resonemang vid hypotetisk fråga:** Kontrollera klientens IP/DNS, om klienten når servern, om domänuppslagning fungerar och om DNS-tjänsten har rätt poster. Ändra först när problemet är identifierat. Detta är en *felsökningsmetod*, inte ett påstående om vad som hände i din tidigare övning.
+## Det jag kan stå för på intervju
 
-## Exempel 3 — DHCP / Windows 11-klient (tidigare AD-/certifikatövning, enligt egen uppgift)
-**Vad du uppgett:** Du har installerat Windows 11 i VMware, arbetat med DHCP och gjort klienttester.
+- Jag har byggt upp en Windows Server 2025-miljö i VMware.
+- Jag har konfigurerat Active Directory och en domänkontrollant.
+- Jag har felsökt och åtgärdat ett verkligt fel under konfigurationen och har bildbevis.
+- Jag har tidigare installerat Windows 11 i VMware och arbetat med DNS, DHCP och klienttester.
 
-Fyll i:
-- Hur var VMware-nätverket konfigurerat?
-- Delade DHCP ut rätt IP och DNS-adress?
-- Vilken kontroll genomförde du från Windows-klienten?
-- Uppstod ett verkligt fel? Vad gjorde du då?
-- Hur verifierade du det slutliga resultatet?
-
-**Tekniskt resonemang vid hypotetisk fråga:** Verifiera klientens nätverksanslutning och IPv4-konfiguration, om adress tilldelas, DHCP-serverns scope/lease, konkurrerande DHCP och rätt DNS-inställningar. Detta är en övningsmodell, inte en återberättad incident.
-
-## 60 sekunder — presentera dig
-> Jag har utbildningsbakgrund inom dator- och nätverksteknik och har arbetat praktiskt med Windows Server, Active Directory och VMware i egna labb och övningar. Jag har bland annat satt upp en domänkontrollant och felsökt ett installationsproblem som jag dokumenterat på GitHub. Jag har också tidigare installerat Windows 11 i en virtuell miljö och övat DNS, DHCP och klienttestning. Nu söker jag en junior roll inom IT-support där jag får använda de kunskaperna för att hjälpa användare, felsöka systematiskt och utvecklas.
-
-Anpassa formuleringen till en faktisk intervju och använd endast detaljer som du själv kan förklara.
-
-## Felsökningsmodell att berätta högt
-1. Lyssna och bedöm påverkan: en användare eller flera?
-2. Ställ relevanta frågor och avgränsa felet.
-3. Kontrollera enklaste sannolika orsakerna, en i taget.
-4. Gör en ändring med rätt behörighet/godkännande.
-5. Verifiera med användaren och dokumentera.
-6. Eskalera om felet inte kan lösas inom ditt ansvar.
-
-För inloggningsproblem: fastställ felmeddelande, om kontot fungerar någon annanstans, nätverks-/domänanslutning och AD-kontots status. Återställ inte ett lösenord utan korrekt identitetskontroll.
+Jag presenterar detta som **labberfarenhet**, inte som om jag har arbetat med riktiga supportkunder.
