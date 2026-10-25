@@ -4,14 +4,14 @@
 
 Jag bygger och dokumenterar ett virtualiserat företagsnät i VMware med Windows Server 2025, Active Directory och Windows-klienter. Syftet är att visa **vad jag faktiskt har gjort**, **hur jag felsöker** och **hur jag verifierar lösningar**.
 
-> **Ärlig projektstatus (25 oktober 2026):** Lab 01 har en dokumenterad installation av Windows Server 2025, statisk IPv4-adress och en Active Directory-domänkontrollant. Lab 02 innehåller en installationsplan och sex **simulerade** supportärenden; dessa är ännu inte verifierade som genomförda.
+> **Projektstatus (25 oktober 2026):** Lab 01 dokumenterar Windows Server 2025 och en Active Directory-domänkontrollant med skärmbilder. Jag har dessutom **uppgett att jag tidigare installerat Windows 11 i VMware och arbetat med DNS, DHCP och klienttestning under Active Directory-/certifikatövningar**; dessa tidigare moment saknar ännu bevis i detta repository. Lab 02:s sex specifika simulerade ärenden är inte verifierade som avslutade.
 
 ## Projektöversikt
 
 | Del | Innehåll | Status |
 |---|---|---|
 | [01 — Active Directory](01_Active_Directory/) | Windows Server 2025, VMware, statisk IPv4 (`10.0.0.1`), AD DS-domän `lab.local` | Dokumenterat med skärmbilder |
-| [02 — IT-support / First Line](02_IT_Support/README.md) | Windows 11-klient, isolerat labbnät, DNS/DHCP, gruppbehörigheter, GPO |
+| [02 — IT-support / First Line](02_IT_Support/README.md) | Ny isolerad klientmiljö och sex simulerade supportfall | Planerad; tidigare liknande övningar har uppgetts |
 | [Supportärenden](02_IT_Support/TICKETS.md) | Sex scenarier från inloggning till onboarding | Scenarier klara; tester återstår |
 | [Progress / bevis](02_IT_Support/PROGRESS.md) | Status, testresultat, bilder och återstående arbete | Löpande |
 | [Arbetsgivarvy](02_IT_Support/FOR_EMPLOYERS.md) | Verifierbara CV- och intervjuformuleringar | Klart utifrån befintlig dokumentation |
@@ -55,7 +55,7 @@ Under förutsättningskontrollen för domänkontrollanten upptäcktes att det lo
 
 **[Starta här: installera och bygg labbet](02_IT_Support/SETUP.md)**
 
-Därefter arbetar jag med [sex simulerade supportärenden](02_IT_Support/TICKETS.md), dokumenterar varje test med [ärendemallen](02_IT_Support/TICKET_TEMPLATE.md) och uppdaterar den [verifierade statusloggen](02_IT_Support/PROGRESS.md).
+Jag kan också återge [tidigare AD-, DNS- och DHCP-övningar i en intervjubank](02_IT_Support/INTERVIEW_STORIES.md). De sex nya, specifika övningarna hålls separat. Därefter arbetar jag vid behov med [sex simulerade supportärenden](02_IT_Support/TICKETS.md), dokumenterar varje test med [ärendemallen](02_IT_Support/TICKET_TEMPLATE.md) och uppdaterar den [verifierade statusloggen](02_IT_Support/PROGRESS.md).
 
 > **För rekryterare:** Detta är självständiga teknikprojekt, inte tidigare anställningar eller påhittade kunduppdrag. Endast verifierade labbresultat markeras som slutförda.
 
